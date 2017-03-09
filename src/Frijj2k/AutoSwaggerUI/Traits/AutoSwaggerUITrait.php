@@ -1,12 +1,10 @@
 <?php
 
-namespace Kevupton\AutoSwaggerUI\Traits;
+namespace Frijj2k\AutoSwaggerUI\Traits;
 
 use Illuminate\Support\Facades\File;
 
 trait AutoSwaggerUITrait {
-
-    private $defaultScanDir = '/app/Http/Controllers';
 
     /**
      * Gets the concatenation of a string onto the base path of the application.
@@ -16,21 +14,6 @@ trait AutoSwaggerUITrait {
      */
     private function basePath($path = '') {
         return realpath(app()->basePath() . '/' . $path);
-    }
-
-    /**
-     * Returns the scanned json result.
-     * This is consumed by the swagger ui to create the request.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getJson() {
-        // the directory to scan
-        $location = $this->basePath(config('swagger.scan.directory', $this->defaultScanDir));
-        // the scanner must be an instance of zircote/swagger-php
-        $scanner = config('swagger.scan.scanner', '\Kevupton\LaravelSwagger\scan');
-
-        return response()->json($scanner($location));
     }
 
     /**

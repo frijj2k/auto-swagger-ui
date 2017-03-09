@@ -1,15 +1,15 @@
-<?php namespace Kevupton\AutoSwaggerUI\Providers;
+<?php namespace Frijj2k\AutoSwaggerUI\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Kevupton\AutoSwaggerUI\Controllers\LaravelController;
-use Kevupton\AutoSwaggerUI\Controllers\LumenController;
+use Frijj2k\AutoSwaggerUI\Controllers\LaravelController;
+use Frijj2k\AutoSwaggerUI\Controllers\LumenController;
 
 /**
  * Class AutoSwaggerUIServiceProvider
  *
  * Service provider for registering the swagger ui configuration.
  *
- * @package Kevupton\Referrals\Providers
+ * @package Frijj2k\Referrals\Providers
  */
 class AutoSwaggerUIServiceProvider extends ServiceProvider {
 
@@ -38,11 +38,9 @@ class AutoSwaggerUIServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $uiUrl      = config('swagger.urls.ui', self::DEFAULT_UI_URL);
-        $jsonUrl    = config('swagger.scan.endpoint');
+        $uiUrl = config('swagger.urls.ui', self::DEFAULT_UI_URL);
 
         $uiFn = '@getUiPath';
-        $jsonFn = '@getJson';
 
         $isLaravel = is_laravel();
 
@@ -50,18 +48,10 @@ class AutoSwaggerUIServiceProvider extends ServiceProvider {
         if ($isLaravel) {
             // ---> Laravel Routes <----
             \Route::get($uiUrl . '{path}', ['as' => self::SWAGGER_UI_NAME, 'uses' => self::LARAVEL_CONTROLLER . $uiFn])->where(['path' => '.*']);
-
-            if ($jsonUrl) {
-                \Route::get($jsonUrl, ['as' => self::SWAGGER_JSON_NAME, 'uses' => self::LARAVEL_CONTROLLER . $jsonFn]);
-            }
         }
         else {
             // ---> Lumen Routes <---
             $this->app->get($uiUrl . '{path:.*}', ['as' => self::SWAGGER_UI_NAME, 'uses' => self::LUMEN_CONTROLLER . $uiFn]);
-
-            if ($jsonUrl) {
-                $this->app->get($jsonUrl, ['as' => self::SWAGGER_JSON_NAME, 'uses' => self::LUMEN_CONTROLLER . $jsonFn]);
-            }
         }
     }
 }

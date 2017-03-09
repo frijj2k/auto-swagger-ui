@@ -10,19 +10,19 @@ class ReferralsTest extends TestCase
     public function testTheStartAt()
     {
         $start_at =  ref_conf('start_at', 0);
-        $this->assertEquals($start_at, \Kevupton\Referrals\ReferQueue::all()->count());
+        $this->assertEquals($start_at, \Frijj2k\Referrals\ReferQueue::all()->count());
     }
 
     public function testJumpQueue() {
         $jump = 10; //jumps 10 places in the queue
 
-        $ref = \Kevupton\Referrals\ReferQueue::findOrFail(20);
+        $ref = \Frijj2k\Referrals\ReferQueue::findOrFail(20);
 
-        $move = new \Kevupton\Referrals\Jobs\MoveInQueue($ref, $ref->position - $jump);
+        $move = new \Frijj2k\Referrals\Jobs\MoveInQueue($ref, $ref->position - $jump);
 
         $move->handle();
 
-        $ref = \Kevupton\Referrals\ReferQueue::findOrFail(20);
+        $ref = \Frijj2k\Referrals\ReferQueue::findOrFail(20);
 
         $this->assertEquals(10, $ref->position);
     }

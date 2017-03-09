@@ -1,9 +1,9 @@
 <?php
 
-namespace Kevupton\AutoSwaggerUI\Controllers;
+namespace Frijj2k\AutoSwaggerUI\Controllers;
 
 use Illuminate\Routing\Controller;
-use Kevupton\AutoSwaggerUI\Traits\AutoSwaggerUITrait;
+use Frijj2k\AutoSwaggerUI\Traits\AutoSwaggerUITrait;
 
 class LaravelController extends Controller
 {

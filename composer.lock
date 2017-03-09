@@ -477,16 +477,16 @@
             "time": "2014-09-09 13:34:57"
         },
         {
-            "name": "kevupton/laravel-swagger",
+            "name": "frijj2k/laravel-swagger",
             "version": "v1.3.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kevupton/laravel-swagger.git",
+                "url": "https://github.com/frijj2k/laravel-swagger.git",
                 "reference": "827874ab4c273925b5c049534af96552251222bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kevupton/laravel-swagger/zipball/827874ab4c273925b5c049534af96552251222bb",
+                "url": "https://api.github.com/repos/frijj2k/laravel-swagger/zipball/827874ab4c273925b5c049534af96552251222bb",
                 "reference": "827874ab4c273925b5c049534af96552251222bb",
                 "shasum": ""
             },
@@ -498,10 +498,10 @@
             "type": "extension",
             "autoload": {
                 "psr-4": {
-                    "Kevupton\\LaravelSwagger\\": "src/Kevupton/LaravelSwagger/"
+                    "Frijj2k\\LaravelSwagger\\": "src/Frijj2k/LaravelSwagger/"
                 },
                 "files": [
-                    "src/Kevupton/LaravelSwagger/functions.php"
+                    "src/Frijj2k/LaravelSwagger/functions.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",

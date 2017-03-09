@@ -1,18 +1,17 @@
 {
-    "name": "kevupton/auto-swagger-ui",
-    "description": "Want the swagger ui without having to set it up. Just install this package.",
+    "name": "frijj2k/auto-swagger-ui",
+    "description": "Auto include Swagger-UI into Laravel project. Based on original source by Kevin Upton (uptonkg@gmail.com)",
     "keywords": ["swagger-ui", "php"],
     "type": "Extension",
     "license": "MIT",
     "authors": [
         {
-            "name": "Kevin Upton",
-            "email": "uptonkg@gmail.com"
+            "name": "Dave Pearson",
+            "email": "dave@pds-uk.com"
         }
     ],
     "require": {
-        "php": ">=5.3",
-        "kevupton/laravel-swagger": "^1.3"
+        "php": ">=5.3"
     },
     "require-dev": {
         "laravel/framework": "5.3.*",
@@ -21,11 +20,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Kevupton\\AutoSwaggerUI\\": "src/Kevupton/AutoSwaggerUI"
+            "Frijj2k\\AutoSwaggerUI\\": "src/Frijj2k/AutoSwaggerUI"
         },
         "files": [
-            "src/Kevupton/AutoSwaggerUI/Helpers/helpers.php"
+            "src/Frijj2k/AutoSwaggerUI/Helpers/helpers.php"
         ]
-    },
-    "minimum-stability": "stable"
+    }
 }

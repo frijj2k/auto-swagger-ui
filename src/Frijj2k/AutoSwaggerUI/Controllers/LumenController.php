@@ -1,8 +1,8 @@
 <?php
 
-namespace Kevupton\AutoSwaggerUI\Controllers;
+namespace Frijj2k\AutoSwaggerUI\Controllers;
 
-use Kevupton\AutoSwaggerUI\Traits\AutoSwaggerUITrait;
+use Frijj2k\AutoSwaggerUI\Traits\AutoSwaggerUITrait;
 use Laravel\Lumen\Routing\Controller;
 
 class LumenController extends Controller

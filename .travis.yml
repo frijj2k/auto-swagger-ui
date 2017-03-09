@@ -20,15 +20,9 @@ cache:
   directories:
     - laravel
 
-services: mysql
-
-install:
-  # create a new database for the hyn connection
-  - export DB_USERNAME=travis DB_DATABASE=hyn DB_PASSWORD= QUEUE_DRIVER=sync
-  - export PACKAGE_PROVIDER=Kevupton\\\\AutoSwaggerUI\\\\Providers\\\\ReferralsServiceProvider::class
-#  - export SEED_CLASS=TestSeeds::class
-  - export PACKAGE_NAME=kevupton/referrals
-  - curl -s https://raw.githubusercontent.com/kevupton/docker-laravel-tests/master/setup.sh | bash
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --prefer-dist --no-interaction
 
 script:
   - cd laravel
