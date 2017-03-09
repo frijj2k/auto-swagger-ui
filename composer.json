@@ -10,6 +10,7 @@
             "email": "dave@pds-uk.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3"
     },
