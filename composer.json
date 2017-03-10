@@ -1,22 +1,32 @@
 {
     "name": "frijj2k/auto-swagger-ui",
     "description": "Auto include Swagger-UI into Laravel project. Based on original source by Kevin Upton (uptonkg@gmail.com)",
-    "keywords": ["swagger-ui", "php"],
+    "keywords": [
+        "API",
+        "Documentation",
+        "Laravel",
+        "swagger-ui",
+        "php"
+    ],
     "type": "Extension",
     "license": "MIT",
     "authors": [
         {
             "name": "Dave Pearson",
             "email": "dave@pds-uk.com"
+        },
+        {
+            "name": "Kevin Upton",
+            "email": "uptonkg@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.5.0",
+        "laravel/framework": "~5.0",
+        "laravel/lumen-framework": "~5.0",
     },
     "require-dev": {
-        "laravel/framework": "5.3.*",
-        "laravel/lumen-framework": "5.3.*",
         "barryvdh/laravel-ide-helper": "^2.2"
     },
     "autoload": {
